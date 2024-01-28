@@ -52,6 +52,10 @@ impl Terminal {
         print!("{}", termion::cursor::Show);
     }
 
+    pub fn clear_current_line() {
+        print!("{}", termion::clear::CurrentLine);
+    }
+
     pub fn read_key() -> Result<Key, std::io::Error> {
         loop {
             if let Some(key) = io::stdin().lock().keys().next() {
