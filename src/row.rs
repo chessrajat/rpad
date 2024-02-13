@@ -10,6 +10,7 @@ impl From<&str> for Row {
     fn from(slice: &str) -> Self {
         let mut row = Self {
             string: String::from(slice),
+            len: 0,
         };
         row.update_len();
         row
